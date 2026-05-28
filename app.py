@@ -75,8 +75,8 @@ def cafeteria():
 # -----------------------------
 # ELECTRICAL PUZZLE
 # -----------------------------
-@app.route("/cafeteria")
-def cafeteria():
+@app.route("/electrical")
+def electrical():
     s = get_state()
 
     if not s["cafeteria_unlocked"]:
