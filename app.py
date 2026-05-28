@@ -75,6 +75,16 @@ def cafeteria():
 # -----------------------------
 # ELECTRICAL PUZZLE
 # -----------------------------
+@app.route("/cafeteria")
+def cafeteria():
+    s = get_state()
+
+    if not s["cafeteria_unlocked"]:
+        return redirect(url_for("dock"))
+
+    return render_template("electrical.html", state=s)
+
+
 @app.route("/electrical/puzzle", methods=["GET", "POST"])
 def electrical_puzzle():
     s = get_state()
