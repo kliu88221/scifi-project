@@ -2,23 +2,47 @@
 
 {% block content %}
 
-<h2>RESEARCH LAB</h2>
+<h2>RESEARCH CONTAINMENT OVERRIDE</h2>
+
+<p>
+How many digits are in the speed of light in meters per second?
+</p>
+
+<p>
+How many states of matter are there?
+</p>
+
+<p>
+How many planets are there in the solar system?
+</p>
+
+<p>
+How many nucleotide base types are there in human DNA?
+</p>
+
+<p>
+How many types of cell division are there?
+</p>
+
+<hr>
+
+{% if not solved %}
 
 <form method="POST">
-    <p>Enter data access code:</p>
-    <input name="code">
-    <button>Unlock</button>
+    <input name="code" maxlength="10" placeholder="Enter override code">
+    <button>Submit</button>
 </form>
 
+{% endif %}
+
 {% if error %}
-<p style="color:red">{{ error }}</p>
+<p style="color:red;">{{ error }}</p>
 {% endif %}
 
-{% if success %}
-<p style="color:lime">Experiment logs revealed.</p>
-<a href="/cafeteria">Return to Hub</a>
-{% endif %}
+{% if solved %}
+<p style="color:lime;">CONTAINMENT OVERRIDE ACCEPTED</p>
 
-<a href="/cafeteria">Return to Cafeteria</a>
+<a href="/lab/message">Return to Cafeteria</a>
+{% endif %}
 
 {% endblock %}

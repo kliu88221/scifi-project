@@ -2,23 +2,13 @@
 
 {% block content %}
 
-<h2>ELECTRICAL SYSTEM</h2>
+<h2>ELECTRICAL SYSTEM HUB</h2>
 
-<form method="POST">
-    <p>Enter activation sequence:</p>
-    <input name="order">
-    <button>Activate</button>
-</form>
+<p>Subsystem interface detected:</p>
 
-{% if error %}
-<p style="color:red">{{ error }}</p>
-{% endif %}
-
-{% if success %}
-<p style="color:lime">Power restored.</p>
-<a href="/cafeteria">Return to Hub</a>
-{% endif %}
-
+<a href="/electrical/diary">Crew Diary Entry</a>
+<a href="/electrical/manual">Power Sequencing Manual</a>
+<a href="/electrical/puzzle">Power Control Puzzle</a>
 <a href="/cafeteria">Return to Cafeteria</a>
 
 {% endblock %}

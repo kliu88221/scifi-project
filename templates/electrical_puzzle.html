@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>ELECTRICAL CONTROL PANEL</h2>
+
+<p>Select power lines in order:</p>
+
+<div id="buttons">
+    <button onclick="add('purple')">Purple</button>
+    <button onclick="add('blue')">Blue</button>
+    <button onclick="add('green')">Green</button>
+    <button onclick="add('yellow')">Yellow</button>
+    <button onclick="add('orange')">Orange</button>
+    <button onclick="add('red')">Red</button>
+</div>
+
+<h3>Sequence:</h3>
+<p id="sequence"></p>
+
+{% if not solved %}
+
+<button onclick="submitSeq()">Submit Sequence</button>
+
+<form id="form" method="POST" style="display:none;">
+    <input type="hidden" name="order" id="order">
+</form>
+
+{% else %}
+
+<p style="color:lime;">
+SYSTEM STABILIZED — POWER RESTORED
+</p>
+
+<!-- IMPORTANT: THIS CHANGES BEHAVIOR -->
+<a href="/electrical/audio">Return to Cafeteria</a>
+
+{% endif %}
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<a href="/electrical">Return to Electrical</a>
+
+<script>
+let seq = [];
+
+function add(color) {
+    seq.push(color);
+    document.getElementById("sequence").innerText = seq.join(" → ");
+}
+
+function submitSeq() {
+    document.getElementById("order").value = seq.join("");
+    document.getElementById("form").submit();
+}
+</script>
+
+{% endblock %}

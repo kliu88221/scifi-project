@@ -2,21 +2,174 @@
 
 {% block content %}
 
-<h2>MEDBAY</h2>
+<h2>MEDBAY RECORDS TERMINAL</h2>
+
+<p>
+The medic reports seeing auditory hallucinations in empty corridors.
+</p>
+
+<p>
+Ryland Taylor claims that his memories are different in between shifts.
+</p>
+
+<p>
+Grace Farmer is the botanist.
+</p>
+
+<p>
+The one who claims that there are dangerous creatures on the ship has been revoked access to the research bay.
+</p>
+
+<hr>
+
+<h3>MEDICAL CHART</h3>
 
 <form method="POST">
-    <p>Enter medical override code:</p>
-    <input name="code">
-    <button>Access</button>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Name</th>
+    <th>Job</th>
+    <th>Symptoms</th>
+    <th>Diagnosis/Notes</th>
+</tr>
+
+<tr>
+    <td>Nora Wren</td>
+    <td>Systems Engineer</td>
+
+    <td>
+        <select name="nora_symptom">
+            <option value="">Select</option>
+            <option value="paranoia">
+                Exhibits paranoia, claims there are dangerous creatures on ship
+            </option>
+            <option value="memory">
+                Claims memory gaps in between shifts
+            </option>
+            <option value="auditory">
+                Reports auditory hallucinations in empty corridors
+            </option>
+            <option value="visual">
+                Reports visual distortions while working on hydroponics
+            </option>
+        </select>
+    </td>
+
+    <td>
+        Restricted access to research bay revoked; pending investigation
+    </td>
+</tr>
+
+<tr>
+    <td>Ryland Taylor</td>
+
+    <td>
+        <select name="ryland_job">
+            <option value="">Select</option>
+            <option value="Medic">Medic</option>
+            <option value="Researcher">Researcher</option>
+            <option value="Botanist">Botanist</option>
+            <option value="Systems Engineer">Systems Engineer</option>
+        </select>
+    </td>
+
+    <td>
+        Claims memory gaps in between shifts
+    </td>
+
+    <td>
+        Treated for sleep deprivation anxiety due to stress;
+        prescribed Melatonin and Lexapro
+    </td>
+</tr>
+
+<tr>
+    <td>Theodore Brown</td>
+
+    <td>Medic</td>
+
+    <td>
+        <select name="theodore_symptom">
+            <option value="">Select</option>
+            <option value="paranoia">
+                Exhibits paranoia, claims there are dangerous creatures on ship
+            </option>
+            <option value="memory">
+                Claims memory gaps in between shifts
+            </option>
+            <option value="auditory">
+                Reports auditory hallucinations in empty corridors
+            </option>
+            <option value="visual">
+                Reports visual distortions while working on hydroponics
+            </option>
+        </select>
+    </td>
+
+    <td>
+        No abnormalities detected in scans; Cleared for duty
+    </td>
+</tr>
+
+<tr>
+    <td>Grace Farmer</td>
+
+    <td>
+        <select name="grace_job">
+            <option value="">Select</option>
+            <option value="Medic">Medic</option>
+            <option value="Researcher">Researcher</option>
+            <option value="Botanist">Botanist</option>
+            <option value="Systems Engineer">Systems Engineer</option>
+        </select>
+    </td>
+
+    <td>
+        Reports visual distortions while working on hydroponics
+    </td>
+
+    <td>
+        <select name="grace_diagnosis">
+            <option value="">Select</option>
+            <option value="cleared">
+                No abnormalities detected in scans; Cleared for duty
+            </option>
+            <option value="sleep">
+                Treated for sleep deprivation anxiety due to stress
+            </option>
+            <option value="unstable">
+                Flagged for psychological instability; under observation
+            </option>
+            <option value="restricted">
+                Restricted access to research bay revoked
+            </option>
+        </select>
+    </td>
+</tr>
+
+</table>
+
+<br>
+
+<button type="submit">Check Records</button>
+
 </form>
 
 {% if error %}
-<p style="color:red">{{ error }}</p>
+<p style="color:red;">
+{{ error }}
+</p>
 {% endif %}
 
-{% if success %}
-<p style="color:lime">Records unlocked.</p>
-<a href="/cafeteria">Return to Hub</a>
+{% if solved %}
+
+
+<p style="color:lime;">
+“If you want the truth, go where they keep it”
+</p>
+
 {% endif %}
 
 

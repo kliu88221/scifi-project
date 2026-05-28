@@ -2,21 +2,20 @@
 
 {% block content %}
 
-<h1>CAFETERIA HUB</h1>
+<h2>CAFETERIA HUB</h2>
 
-<p>Ship systems partially restored.</p>
+<a href="/electrical/puzzle">Electrical Systems</a>
 
-<div style="display:flex; flex-direction:column; gap:10px;">
-
-<a href="/electrical">Electrical Systems</a>
+{% if state.electrical %}
 <a href="/medbay">Medbay</a>
+{% endif %}
+
+{% if state.medbay %}
 <a href="/lab">Research Lab</a>
+{% endif %}
+
+{% if state.lab %}
 <a href="/cockpit">Cockpit</a>
-
-</div>
-
-
-<!-- BACK NAVIGATION -->
-<a href="/dock">Return to Docking Bay</a>
+{% endif %}
 
 {% endblock %}

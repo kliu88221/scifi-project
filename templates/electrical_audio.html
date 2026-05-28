@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>SHIP SYSTEM LOG — AUDIO RECOVERY</h2>
+
+<audio controls>
+    <source src="{{ url_for('static', filename='audio/electrical_log.mp3') }}" type="audio/mpeg">
+    Your browser does not support audio playback.
+</audio>
+
+<a href="/cafeteria">Return to Cafeteria</a>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>ELECTRICAL SYSTEM MANUAL</h2>
+
+<pre>
+WARNING:
+Improper activation sequencing may result in system-wide power surges and loss of onboard records.
+Proceed with caution.
+</pre>
+
+<h3>PRIMARY POWER LINES</h3>
+<p>The fuse box contains 6 power lines:</p>
+
+<ul>
+    <li>Purple</li>
+    <li>Blue</li>
+    <li>Green</li>
+    <li>Yellow</li>
+    <li>Orange</li>
+    <li>Red</li>
+</ul>
+
+<h3>SEQUENCING CONSTRAINTS</h3>
+
+<ul>
+    <li>Purple must be activated before Blue</li>
+    <li>Green must be activated before Blue</li>
+    <li>Orange must be activated after Green</li>
+    <li>Green must be activated before Yellow</li>
+    <li>Red must be activated after Purple but before Green</li>
+    <li>Yellow cannot be activated before Blue</li>
+    <li>Blue must be activated second to last</li>
+</ul>
+
+<a href="/electrical/puzzle">Proceed to Control Puzzle</a>
+<a href="/cafeteria">Return to Cafeteria</a>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>IMAGE 4</h2>
+
+<img src="{{ url_for('static', filename='images/image_4.png') }}"
+     style="max-width:100%; border:2px solid white;">
+
+<a href="/cockpit">Return to Cockpit</a>
+
+{% endblock %}
