@@ -169,14 +169,18 @@ def medbay():
     if request.method == "POST":
 
         nora_symptom = request.form.get("nora_symptom")
+        nora_diagnosis = request.form.get("nora_diagnosis")
         ryland_job = request.form.get("ryland_job")
+        ryland_symptom = request.form.get("ryland_symptom")
         theodore_symptom = request.form.get("theodore_symptom")
         grace_job = request.form.get("grace_job")
         grace_diagnosis = request.form.get("grace_diagnosis")
 
         correct = (
             nora_symptom == "paranoia" and
+            nora_diagnosis == "restricted" and
             ryland_job == "Researcher" and
+            ryland_symptom == "memory" and
             theodore_symptom == "auditory" and
             grace_job == "Botanist" and
             grace_diagnosis == "unstable"
