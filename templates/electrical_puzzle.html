@@ -25,13 +25,13 @@
 <form id="form" method="POST" style="display:none;">
     <input type="hidden" name="order" id="order">
 </form>
-
+<br>
 {% else %}
 
 <p style="color:lime;">
 SYSTEM STABILIZED — POWER RESTORED
 </p>
-
+<br>
 <!-- IMPORTANT: THIS CHANGES BEHAVIOR -->
 <a href="/electrical/audio">Return to Cafeteria</a>
 
@@ -41,8 +41,10 @@ SYSTEM STABILIZED — POWER RESTORED
 <p style="color:red">{{ error }}</p>
 {% endif %}
 
-<a href="/electrical/diary">Return to Diary</a>
-
+<br>
+{% if not solved %}
+<a href="/electrical/manual">Return to Manual</a>
+{% endif %}
 <script>
 let seq = [];
 

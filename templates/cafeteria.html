@@ -2,18 +2,18 @@
 
 {% block content %}
 
-<h2>CAFETERIA HUB</h2>
-
+<h2>CAFETERIA</h2>
+<br>
 <a href="/electrical">Electrical Systems</a>
-
+<br>
 {% if state.electrical %}
 <a href="/medbay">Medbay</a>
 {% endif %}
-
+<br>
 {% if state.medbay %}
 <a href="/lab">Research Lab</a>
 {% endif %}
-
+<br>
 {% if state.lab %}
 <a href="/cockpit">Cockpit</a>
 {% endif %}

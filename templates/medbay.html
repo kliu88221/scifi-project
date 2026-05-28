@@ -52,7 +52,7 @@ The one who claims that there are dangerous creatures on the ship has been revok
                 Reports auditory hallucinations in empty corridors
             </option>
             <option value="visual">
-                Reports visual distortions while working on hydroponics
+                Reports seeing visual distortions while working
             </option>
         </select>
     </td>
@@ -61,7 +61,7 @@ The one who claims that there are dangerous creatures on the ship has been revok
         <select name="nora_diagnosis">
             <option value="">Select</option>
             <option value="cleared">
-                No abnormalities detected in scans; Cleared for duty
+                No abnormalities detected in scans; cleared for duty
             </option>
             <option value="sleep">
                 Treated for sleep deprivation anxiety due to stress
@@ -70,7 +70,7 @@ The one who claims that there are dangerous creatures on the ship has been revok
                 Flagged for psychological instability; under observation
             </option>
             <option value="restricted">
-                Restricted access to research bay revoked
+                Restricted access to research bay revoked; pending investigation
             </option>
         </select>
     </td>
@@ -102,7 +102,7 @@ The one who claims that there are dangerous creatures on the ship has been revok
                 Reports auditory hallucinations in empty corridors
             </option>
             <option value="visual">
-                Reports visual distortions while working on hydroponics
+                Reports seeing visual distortions while working 
             </option>
         </select>
     </td>
@@ -131,7 +131,7 @@ The one who claims that there are dangerous creatures on the ship has been revok
                 Reports auditory hallucinations in empty corridors
             </option>
             <option value="visual">
-                Reports visual distortions while working on hydroponics
+                Reports seeing visual distortions while working
             </option>
         </select>
     </td>
@@ -155,14 +155,14 @@ The one who claims that there are dangerous creatures on the ship has been revok
     </td>
 
     <td>
-        Reports visual distortions while working on hydroponics
+        Reports seeing visual distortions while working
     </td>
 
     <td>
         <select name="grace_diagnosis">
             <option value="">Select</option>
             <option value="cleared">
-                No abnormalities detected in scans; Cleared for duty
+                No abnormalities detected in scans; cleared for duty
             </option>
             <option value="sleep">
                 Treated for sleep deprivation anxiety due to stress
@@ -171,7 +171,7 @@ The one who claims that there are dangerous creatures on the ship has been revok
                 Flagged for psychological instability; under observation
             </option>
             <option value="restricted">
-                Restricted access to research bay revoked
+                Restricted access to research bay revoked; pending investigation
             </option>
         </select>
     </td>
@@ -184,7 +184,7 @@ The one who claims that there are dangerous creatures on the ship has been revok
 <button type="submit">Check Records</button>
 
 </form>
-
+<br>
 {% if error %}
 <p style="color:red;">
 {{ error }}
@@ -195,7 +195,7 @@ The one who claims that there are dangerous creatures on the ship has been revok
 
 
 <p style="color:lime;">
-“If you want the truth, go where they keep it”
+If you want the truth, go where they keep <b><i>it</i></b>
 </p>
 
 {% endif %}
