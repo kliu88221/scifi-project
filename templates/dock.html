@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>DOCKING TERMINAL</h2>
+
+<p>External access point to Astraeus vessel.</p>
+
+<form method="POST">
+    <input name="code" maxlength="4" required>
+    <button>Unlock Dock</button>
+</form>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+{% if unlocked %}
+<p style="color:lime">
+DOCK AUTHORIZED — SHIP ACCESS GRANTED
+</p>
+
+<a href="/cafeteria">Enter Cafeteria (Ship Interior)</a>
+
+{% endif %}
+
+<!-- ALWAYS AVAILABLE NAVIGATION OPTIONS -->
+<a href="/message">Return to Transmission</a>
+
+{% endblock %}

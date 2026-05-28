@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>MEDBAY</h2>
+
+<form method="POST">
+    <p>Enter medical override code:</p>
+    <input name="code">
+    <button>Access</button>
+</form>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+{% if success %}
+<p style="color:lime">Records unlocked.</p>
+<a href="/cafeteria">Return to Hub</a>
+{% endif %}
+
+
+<a href="/cafeteria">Return to Cafeteria</a>
+
+{% endblock %}

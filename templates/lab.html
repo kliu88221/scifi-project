@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>RESEARCH LAB</h2>
+
+<form method="POST">
+    <p>Enter data access code:</p>
+    <input name="code">
+    <button>Unlock</button>
+</form>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+{% if success %}
+<p style="color:lime">Experiment logs revealed.</p>
+<a href="/cafeteria">Return to Hub</a>
+{% endif %}
+
+<a href="/cafeteria">Return to Cafeteria</a>
+
+{% endblock %}
